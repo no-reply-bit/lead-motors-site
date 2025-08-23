@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LEAD作業 Motors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <img id="logo"
+            src="./images/logoblack.png"
+            data-logo-light="./images/logoblack.png"
+            data-logo-dark="./images/logowhite.png"
+            alt="LEAD Motors">
+      </a>
+        <nav class="nav" id="nav">
+        <a href="#models">モデル一覧</a>
+        <a href="./news.html">ニュース</a>  <!-- ←ここ -->
+        <a href="#support">サポート</a>
+        <a href="./company.html">会社概要</a>
+        <a href="./contact.html">お問い合わせ</a>  <!-- ←ここを変更 -->
+        </nav>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme" id="themeBtn" aria-label="テーマ切替">🌙</button>
+
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero slider" id="hero">
+    <div class="slides">
+      <figure class="slide active" data-title="Crafted Performance" data-desc="上質な移動体験を、すべての人に。" data-link="#models">
+        <img src="./images/top1.jpeg" alt="Hero 1">
+      </figure>
+      <figure class="slide" data-title="Design Meets Technology" data-desc="洗練された体験を、手のひらに。" data-link="./company.html">
+        <img src="./images/top2.jpg" alt="Hero 2">
+      </figure>
+      <figure class="slide" data-title="Experience the Future" data-desc="次の移動を、もっと自由に。" data-link="./contact.html">
+        <img src="./images/top3.jpg" alt="Hero 3">
+      </figure>
+    </div>
+
+    <!-- キャプション（自動で更新されます） -->
+    <div class="hero-copy">
+      <h1 id="heroTitle" class="fx-grad">Crafted Performance</h1>  
+      <p id="heroDesc">上質な移動体験を、すべての人に。</p>
+      <a class="btn glass" id="heroCta" href="#models">モデルを見る</a> <!-- ← ボタンだけ glass -->
+    </div>
+
+    <!-- コントロール -->
+    <div class="dots" id="heroDots"></div>
+    <div class="progress" id="heroProg"><span></span></div>
+    <button class="ctrl prev" aria-label="prev">‹</button>
+    <button class="ctrl next" aria-label="next">›</button>
+  </section>
+
+    <section class="fullbleed" id="stays">
+    <div class="row">
+        <article class="nah-card">
+        <img src="./images/rx.png.png" alt="Stay 1">
+        <div class="overlay"><h3>City Suite</h3><p>From ¥39,000 / night</p></div>
+        </article>
+        <article class="nah-card">
+        <img src="./images/nx.png.png" alt="Stay 2">
+        <div class="overlay"><h3>Forest Villa</h3><p>From ¥45,000 / night</p></div>
+        </article>
+        <article class="nah-card">
+        <img src="./images/ux300e.png.png" alt="Stay 3">
+        <div class="overlay"><h3>Seaside Loft</h3><p>From ¥52,000 / night</p></div>
+        </article>
+        <article class="nah-card">
+        <img src="./images/gx.png.png" alt="Stay 4">
+        <div class="overlay"><h3>Mountain Cabin</h3><p>From ¥48,000 / night</p></div>
+        </article>
+    </div>
+    <button class="sbtn prev" aria-label="prev">‹</button>
+    <button class="sbtn next" aria-label="next">›</button>
+    </section>
+
+
+  <!-- Important notes -->
+  <section class="notes">
+    <div class="container">
+      <h2>重要なお知らせ</h2>
+      <ul>
+        <li>生産・出荷に関するご案内（例）</li>
+        <li>価格表記・装備はサンプルです（例）</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Models -->
+  <section id="models" class="models">
+    <div class="container">
+      <div class="models-head">
+        <h2>モデル一覧</h2>
+        <div class="tabs">
+          <button class="tab active" data-filter="all">ALL</button>
+          <button class="tab" data-filter="suv">SUV</button>
+          <button class="tab" data-filter="sedan">SEDAN</button>
+          <button class="tab" data-filter="ev">BEV</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- 画像は手元の10枚を使用。足りなければ同じ画像でOK -->
+        <article class="card" data-cat="suv ev">
+          <a href="./models/ux300e.html">
+            <img src="./images/ux300e.png.png" alt="UX300e"><h3>UX300e</h3>
+          </a>
+        </article>
+
+        <article class="card" data-cat="suv"><a href="./models/gx.html"><img src="./images/gx.png.png" alt="GX"><h3>GX</h3></a></article>
+        <article class="card" data-cat="suv"><a href="./models/nx.html"><img src="./images/nx.png.png" alt="NX"><h3>NX</h3></a></article>
+        <article class="card" data-cat="suv"><a href="./models/rx.html"><img src="./images/rx.png.png" alt="RX"><h3>RX</h3></a></article>
+        <article class="card" data-cat="suv"><a href="./models/ux.html"><img src="./images/ux.png.png" alt="UX"><h3>UX</h3></a></article>
+        <article class="card" data-cat="sedan"><a href="./models/ls.html"><img src="./images/ls.png.png" alt="LS"><h3>LS</h3></a></article>
+        <article class="card" data-cat="suv"><a href="./models/lx.html"><img src="./images/lx.png.png" alt="LX"><h3>LX</h3></a></article>
+        <article class="card" data-cat="suv"><a href="./models/lbx.html"><img src="./images/lbx.png.png" alt="LBX"><h3>LBX</h3></a></article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="news">
+    <div class="container">
+      <h2>NEWS</h2>
+        <div id="newsList" class="news-list"></div>
+        <a class="btn" href="./news.html" style="display:inline-block;margin-top:12px;">ニュース一覧へ</a>
+      </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" class="support">
+    <div class="container support-grid">
+      <a class="support-item" href="#">
+        <div class="icon">🏬</div>
+        <div class="name">販売店検索</div>
+      </a>
+      <a class="support-item" href="#">
+        <div class="icon">🧮</div>
+        <div class="name">見積りシミュレーション</div>
+      </a>
+      <a class="support-item" href="#">
+        <div class="icon">🚗</div>
+        <div class="name">試乗予約</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-row">
+      <div class="stat"><div class="num">98%</div><div class="cap">顧客満足</div></div>
+      <div class="stat"><div class="num">120+</div><div class="cap">販売拠点</div></div>
+      <div class="stat"><div class="num">30万台</div><div class="cap">累計販売</div></div>
+      <div class="stat"><div class="num">25</div><div class="cap">受賞実績</div></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <details class="qa">
+        <summary>試乗の予約はオンラインで可能ですか？</summary>
+        <div class="a">はい、お問い合わせフォームからご希望日時を送信してください。</div>
+      </details>
+      <details class="qa">
+        <summary>保証期間はどれくらいですか？</summary>
+        <div class="a">新車保証（例）：3年または10万km。詳細は販売店へ。</div>
+      </details>
+      <details class="qa">
+        <summary>EVの充電方法を教えてください。</summary>
+        <div class="a">普通/急速の2種に対応。自宅・公共の充電設備が利用可能です。</div>
+      </details>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div class="left">
+        <div class="brand">LEAD Motors</div>
+        <small>© 2025 LEAD作業</small>
+      </div>
+        <nav class="footer-nav">
+        <a href="./company.html">会社概要</a>
+        <a href="./contact.html">お問い合わせ</a>  <!-- ←ここを変更 -->
+        </nav>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const ham = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('on');
+      nav.classList.toggle('open');
+    });
+
+    // タブフィルタ
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.card');
+    tabs.forEach(t => {
+      t.addEventListener('click', () => {
+        tabs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        const cat = t.dataset.filter;
+        cards.forEach(c => {
+          c.style.display = (cat === 'all' || c.dataset.cat.includes(cat)) ? '' : 'none';
+        });
+      });
+    });
+
+    //-- Fancy Hero Slider -->
+  (() => {
+    const DURATION = 3000;
+    const hero   = document.getElementById('hero');
+    const slides = [...hero.querySelectorAll('.slide')];
+    const prev   = hero.querySelector('.prev');
+    const next   = hero.querySelector('.next');
+    const dotsEl = hero.querySelector('#heroDots');
+    const progEl = hero.querySelector('#heroProg > span');
+    const titleEl= hero.querySelector('#heroTitle');
+    const descEl = hero.querySelector('#heroDesc');
+    const ctaEl  = hero.querySelector('#heroCta');
+
+    let i = 0, timer, readyAt = 0;
+
+    // dots
+    dotsEl.innerHTML = slides.map((_,idx)=>`<button aria-label="go to slide ${idx+1}"></button>`).join('');
+    const dots = [...dotsEl.querySelectorAll('button')];
+
+    const applyCaption = (s) => {
+      titleEl.textContent = s.dataset.title || '';
+      descEl.textContent  = s.dataset.desc  || '';
+      if (s.dataset.link) ctaEl.href = s.dataset.link;
+    };
+
+    const setActive = (n) => {
+      slides[i].classList.remove('active');
+      dots[i].classList.remove('on');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('active');
+      dots[i].classList.add('on');
+      applyCaption(slides[i]);
+      restartProgress();
+    };
+
+    const restartProgress = () => {
+      progEl.style.transition = 'none';
+      progEl.style.transform  = 'scaleX(0)';
+      requestAnimationFrame(() => {
+        progEl.style.transition = `transform ${DURATION}ms linear`;
+        progEl.style.transform  = 'scaleX(1)';
+      });
+    };
+
+    const stop = () => clearInterval(timer);
+    const play = () => {
+      stop();
+      timer = setInterval(() => setActive(i+1), DURATION);
+      restartProgress();
+      // 開始直後の“ホバー停止”を無視する猶予（ms）
+      readyAt = performance.now() + 800;
+    };
+
+    // ボタン / ドット
+    prev.addEventListener('click', () => { stop(); setActive(i-1); play(); });
+    next.addEventListener('click', () => { stop(); setActive(i+1); play(); });
+    dots.forEach((d,idx)=> d.addEventListener('click',()=>{ stop(); setActive(idx); play(); }));
+
+    // ホバー停止（開始直後は無視）
+    hero.addEventListener('pointerenter', () => {
+      if (performance.now() >= readyAt) stop();
+    }, {passive:true});
+    hero.addEventListener('pointerleave', () => play(), {passive:true});
+
+    // 画面に見えたら自動再生（初回のみ）
+    const io = new IntersectionObserver((entries)=>{
+      if (entries[0].isIntersecting) { play(); io.disconnect(); }
+    }, { threshold: 0.3 });
+    io.observe(hero);
+
+    // 非表示タブでタイマーが止まる対策
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop(); else play();
+    });
+    
+    // 初期UI
+    dots[0].classList.add('on');
+    applyCaption(slides[0]);
+  })();
+
+
+
+      // 横スクロール操作
+      (() => {
+      const row = document.querySelector('#stays .row');
+      const prev = document.querySelector('#stays .prev');
+      const next = document.querySelector('#stays .next');
+      if(row && prev && next){
+          const step = () => row.clientWidth * 0.8;
+          prev.addEventListener('click',()=>row.scrollBy({left:-step(),behavior:'smooth'}));
+          next.addEventListener('click',()=>row.scrollBy({left: step(),behavior:'smooth'}));
+      }
+      })();
+
+      // ---------- Scroll reveal ----------
+      (() => {
+      const targets = document.querySelectorAll(
+          '.hero-copy, .models-head, .card, .news-item, .support-item, .nah-card, .notes .container'
+      );
+      targets.forEach(el => el.classList.add('reveal'));
+
+      const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+          if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+          }
+          });
+      }, { threshold: 0.15 });
+
+      targets.forEach(el => io.observe(el));
+      })();
+
+      // ---------- Header shrink ----------
+      (() => {
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header.classList.toggle('shrink', window.scrollY > 10);
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      })();
+
+
+      //<!-- 既存の Theme toggle を置き換え -->
+    (() => {
+      const btn  = document.getElementById('themeBtn');
+      const logo = document.getElementById('logo');
+
+      const setLogo = (mode) => {
+        if (!logo) return;
+        const light = logo.dataset.logoLight;
+        const dark  = logo.dataset.logoDark;
+        logo.src = (mode === 'dark') ? dark : light;
+      };
+
+      const apply = (mode) => {
+        document.body.classList.toggle('theme-dark', mode === 'dark');
+        if (btn) btn.textContent = (mode === 'dark') ? '☀️' : '🌙';
+        setLogo(mode);
+        localStorage.setItem('theme', mode);
+      };
+
+      const saved = localStorage.getItem('theme') || 'light';
+      apply(saved);
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const next = document.body.classList.contains('theme-dark') ? 'light' : 'dark';
+          apply(next);
+        });
+      }
+    })();
+  </script>
+
+  <script src="./data/news.js"></script>
+  <script>
+  (() => {
+    const mount = document.getElementById('newsList');
+    const items = (window.NEWS || []).slice(0, 5);
+    mount.innerHTML = items.map(i => `
+      <a class="news-item" href="${i.url}">
+        <span class="date">${i.date}</span>
+        <span class="title">${i.title}</span>
+      </a>
+    `).join('');
+  })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>お問い合わせ | LEAD作業 Motors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">LEAD Motors</a>
+      <nav class="nav" id="nav">
+        <a href="./index.html#models">モデル一覧</a>
+        <a href="./index.html#news">ニュース</a>
+        <a href="./index.html#support">サポート</a>
+        <a href="./company.html">会社概要</a>
+        <a href="./contact.html" class="active">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero">
+      <h1>お問い合わせ</h1>
+      <p>ご質問・ご相談はこちらから</p>
+    </section>
+
+    <section class="container">
+      <form id="contactForm" class="form">
+        <div class="field">
+          <label for="name">お名前</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="subject">件名</label>
+          <input id="subject" name="subject" type="text" required />
+        </div>
+        <div class="field">
+          <label for="message">内容</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <label class="check">
+          <input id="agree" type="checkbox" required />
+          <span>プライバシーポリシーに同意します</span>
+        </label>
+
+        <button class="btn" type="submit">送信</button>
+        <p id="note" class="form-note" hidden>
+          メールアプリが開かない場合は、内容をクリップボードにコピーしました。お使いのメールに貼り付けて送信してください。
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="left"><div class="brand">LEAD Motors</div><small>© 2025 LEAD作業</small></div>
+      <nav class="footer-nav"><a href="./company.html">会社概要</a><a href="./contact.html">お問い合わせ</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    // ヘッダー開閉
+    const ham=document.getElementById('hamburger'); const nav=document.getElementById('nav');
+    ham.addEventListener('click',()=>{ham.classList.toggle('on');nav.classList.toggle('open');});
+
+    // フォーム送信：mailtoで開く＋開かなかった時はコピー
+    const f=document.getElementById('contactForm');
+    f.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const name=f.name.value.trim();
+      const email=f.email.value.trim();
+      const subject=f.subject.value.trim();
+      const message=f.message.value.trim();
+      const body = `お名前: ${name}%0D%0Aメール: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+      const mailto=`mailto:info@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      const w = window.open(mailto, '_blank');
+
+      // フォールバック：本文をコピー
+      try{
+        await navigator.clipboard.writeText(
+          `お名前: ${name}\nメール: ${email}\n\n${message}`
+        );
+        document.getElementById('note').hidden = false;
+      }catch(_){}
+      if(!w) document.getElementById('note').hidden = false;
+    });
+  </script>
+</body>
+</html>

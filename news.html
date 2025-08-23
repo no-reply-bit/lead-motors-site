@@ -1,0 +1,49 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEWS | LEAD Motors</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head><body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="./index.html">LEAD Motors</a>
+  <nav class="nav" id="nav">
+    <a href="./index.html#models">モデル一覧</a>
+    <a href="./news.html" class="active">ニュース</a>
+    <a href="./index.html#support">サポート</a>
+    <a href="./company.html">会社概要</a>
+    <a href="./contact.html">お問い合わせ</a>
+  </nav>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></header>
+
+<main class="page">
+  <section class="page-hero"><h1>NEWS</h1><p>最新のお知らせ</p></section>
+  <section class="container">
+    <div id="allNews" class="news-list" style="margin:20px 0;"></div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <div class="left"><div class="brand">LEAD Motors</div><small>© 2025 LEAD作業</small></div>
+  <nav class="footer-nav"><a href="./company.html">会社概要</a><a href="./contact.html">お問い合わせ</a></nav>
+</div></footer>
+
+<script src="./data/news.js"></script>
+<script>
+// ヘッダー開閉
+const ham=document.getElementById('hamburger'),nav=document.getElementById('nav');
+ham.addEventListener('click',()=>{ham.classList.toggle('on');nav.classList.toggle('open');});
+
+// NEWS描画（新しい日付が上）
+(() => {
+  const list = (window.NEWS || []).slice().sort((a,b)=> b.date.localeCompare(a.date));
+  const mount = document.getElementById('allNews');
+  mount.innerHTML = list.map(i => `
+    <a class="news-item" href="${i.url}">
+      <span class="date">${i.date}</span>
+      <span class="title">${i.title}</span>
+    </a>
+  `).join('');
+})();
+</script>
+</body></html>
